@@ -41,8 +41,11 @@ pub fn topology_to_json(topo: &Topology) -> String {
         .nodes
         .values()
         .map(|n| {
-            let distance: Vec<String> =
-                n.distance.iter().map(|(id, d)| format!("{}:{d}", quote(&id.to_string()))).collect();
+            let distance: Vec<String> = n
+                .distance
+                .iter()
+                .map(|(id, d)| format!("{}:{d}", quote(&id.to_string())))
+                .collect();
             format!(
                 "{{\"id\":{},\"cpus\":{},\"distance\":{{{}}}}}",
                 n.id,
