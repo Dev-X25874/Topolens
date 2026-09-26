@@ -27,7 +27,8 @@ fn topology_json_has_expected_shape() {
     let topo = sample_topology();
     let out = topology_to_json(&topo);
 
-    assert!(out.contains("\"numa_nodes\":[{\"id\":0,\"cpus\":\"0-3\",\"distance\":{\"0\":10,\"1\":21}}]"));
+    assert!(out
+        .contains("\"numa_nodes\":[{\"id\":0,\"cpus\":\"0-3\",\"distance\":{\"0\":10,\"1\":21}}]"));
     assert!(out.contains("\"bdf\":\"0000:81:00.0\""));
     assert!(out.contains("\"numa_node\":0"));
 }
@@ -59,7 +60,8 @@ fn placements_json_has_expected_shape() {
     assert!(out.contains("\"accelerator\":\"0000:81:00.0\""));
     assert!(out.contains("\"verdict\":\"local: pin here, no cross-node hop\""));
     assert!(out.contains("\"pin_cpus\":\"0-3\""));
-    assert!(out.contains("\"ranked_nodes\":[{\"node\":0,\"distance\":10},{\"node\":1,\"distance\":21}]"));
+    assert!(out
+        .contains("\"ranked_nodes\":[{\"node\":0,\"distance\":10},{\"node\":1,\"distance\":21}]"));
 }
 
 #[test]
