@@ -4,6 +4,11 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+### Added
+- `--json` flag on `topolens scan` and `topolens recommend` for
+  machine-readable output, via a small hand-rolled JSON writer
+  (`src/json.rs`) — no new dependency added.
+
 ### Fixed
 - `bench.rs`: the "far verdict" benchmark now actually exercises the
   far-placement code path (previously it measured a placement that

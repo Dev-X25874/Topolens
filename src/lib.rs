@@ -21,6 +21,7 @@
 //! ```
 
 pub mod advisor;
+pub mod json;
 pub mod topology;
 
 pub use advisor::Placement;

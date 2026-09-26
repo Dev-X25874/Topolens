@@ -24,6 +24,9 @@ rather than adding it silently.
   belongs here.
 - `src/advisor.rs` — all scoring/ranking logic. No file I/O belongs
   here — it should only ever operate on an already-built `Topology`.
+- `src/json.rs` — hand-rolled JSON rendering for `Topology`/`Placement`,
+  used by the CLI's `--json` flag. No scanning or scoring logic belongs
+  here, only formatting of already-computed values.
 - `src/bin/topolens.rs` — CLI, thin wrapper over the library.
 - `src/bin/bench.rs` — micro-benchmarks, uses `std::hint::black_box`
   around both inputs and outputs of anything timed, or the compiler

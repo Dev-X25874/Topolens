@@ -56,6 +56,14 @@ $ topolens recommend
   numactl:  numactl --physcpubind=16-31 --membind=1
 ```
 
+Add `--json` to either command for machine-readable output, e.g. for
+feeding a scheduler instead of a human:
+
+```console
+$ topolens recommend --json
+[{"accelerator":"0000:81:00.0","verdict":"local: pin here, no cross-node hop","pin_cpus":"16-31","ranked_nodes":[{"node":1,"distance":10},{"node":0,"distance":21}]}]
+```
+
 As a library:
 
 ```rust
